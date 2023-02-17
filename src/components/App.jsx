@@ -12,7 +12,7 @@ class App extends Component {
     filter: '',
   };
 
-  addContact = ({ name, number }) => {
+  handleAddContact = ({ name, number }) => {
     const normalizationName = name.toLowerCase();
 
     const alreadyInContacts = this.state.contacts.some(
@@ -80,7 +80,7 @@ class App extends Component {
     return (
       <div className={css.box}>
         <h2 className={css.title}>Phonebook</h2>
-        <ContactForm onSubmit={this.addContact} />
+        <ContactForm onSubmit={this.handleAddContact} />
         <h2 className={css.title}>Contacts</h2>
         {contacts.length > 0 ? (
           <>
